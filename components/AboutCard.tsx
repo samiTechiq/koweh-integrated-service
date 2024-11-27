@@ -39,9 +39,9 @@ const AboutCard = () => {
 						</p>
 
 						<p className="text-lg text-zinc-700 mt-8">
-							Whether you're an aspiring entrepreneur or an
-							established business, we're here to help you
-							succeed. Let's work together to bring your vision to
+							Whether you are an aspiring entrepreneur or an
+							established business, we are here to help you
+							succeed. Let work together to bring your vision to
 							life.
 						</p>
 					</div>

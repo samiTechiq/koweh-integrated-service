@@ -41,7 +41,7 @@ const ContactCard = () => {
 							<li className="flex items-center gap-x-4">
 								<BadgeCheck className="text-primary" />
 								<p className="text-zinc-800 font-medium text-lg">
-									Don't miss out on our special offers!
+									Do not miss out on our special offers!
 									Request a free quote to learn more.
 								</p>
 							</li>

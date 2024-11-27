@@ -2,13 +2,12 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-type Props = {};
 interface Service {
 	src: string;
 	caption: string;
 }
 
-const ServiceCard = (props: Props) => {
+const ServiceCard = () => {
 	const services: Service[] = [
 		{ src: "/services/banner.jpg", caption: "Banner Design" },
 		{ src: "/services/brand-identity.jpg", caption: "Brand Identity" },
@@ -37,8 +36,10 @@ const ServiceCard = (props: Props) => {
 			<div className="grid md:grid-cols-4 gap-x-4 gap-y-6 grid-cols-1">
 				{services.map((service) => (
 					<div key={service.src} className="bg-zinc-100 rounded-md">
-						<img
+						<Image
 							src={service.src}
+							width={500}
+							height={500}
 							className="h-[350px] w-full rounded-t-md"
 							alt={service.caption}
 						/>

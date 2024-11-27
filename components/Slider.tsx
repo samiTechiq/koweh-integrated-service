@@ -1,6 +1,7 @@
 "use client";
 import { SkipBack, SkipForward } from "lucide-react";
 import { FC, useEffect, useState } from "react";
+import Image from "next/image";
 
 interface Slide {
 	src: string;
@@ -22,14 +23,6 @@ const Slider: FC = () => {
 
 	const [currentIndex, setCurrentIndex] = useState<number>(0);
 	const [isAnimating, setIsAnimating] = useState<boolean>(false);
-
-	useEffect(() => {
-		const interval = setInterval(() => {
-			handleNextSlide();
-		}, 5000); // Change slide every 1 minute
-
-		return () => clearInterval(interval); // Cleanup interval on component unmount
-	}, []);
 
 	const handlePrevSlide = (): void => {
 		if (isAnimating) return; // Prevent overlap animations
@@ -53,6 +46,14 @@ const Slider: FC = () => {
 		}, 500); // Animation duration
 	};
 
+	useEffect(() => {
+		const interval = setInterval(() => {
+			handleNextSlide();
+		}, 5000); // Change slide every 1 minute
+
+		return () => clearInterval(interval); // Cleanup interval on component unmount
+	}, []);
+
 	return (
 		<div className="relative w-full mx-auto overflow-hidden h-[300px] sm:h-[400px] lg:h-[500px]">
 			{/* Slides */}
@@ -67,8 +68,10 @@ const Slider: FC = () => {
 						}`}
 					>
 						{/* Background Image */}
-						<img
+						<Image
 							src={slide.src}
+							width={500}
+							height={500}
 							alt={`Slide ${index + 1}`}
 							className="w-full h-full object-cover"
 						/>
