@@ -1,0 +1,105 @@
+.sliderContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 80%;
+	margin: 0 auto;
+	position: relative;
+}
+
+.slider {
+	display: flex;
+	overflow: hidden;
+	width: 100%;
+	max-width: 600px;
+	position: relative;
+	justify-content: center;
+}
+
+.slide {
+	min-width: 100%;
+	transition: opacity 0.5s ease, transform 0.5s ease;
+	text-align: center;
+	padding: 1rem;
+}
+
+.inactiveSlide {
+	opacity: 0.5;
+	transform: scale(0.9);
+}
+
+.activeSlide {
+	opacity: 1;
+	transform: scale(1);
+}
+
+.picture {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	margin: 0 auto;
+	border: 3px solid #ddd;
+}
+
+.name {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin: 0.5rem 0;
+}
+
+.profession {
+	font-size: 1rem;
+	color: gray;
+	margin: 0.2rem 0;
+}
+
+.thought {
+	font-size: 1rem;
+	margin-top: 0.5rem;
+}
+
+.navButton {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: none;
+	border: none;
+	font-size: 2rem;
+	cursor: pointer;
+	color: #555;
+	z-index: 2;
+}
+
+.navButton:hover {
+	color: #000;
+}
+
+.navButton:first-of-type {
+	left: -2rem;
+}
+
+.navButton:last-of-type {
+	right: -2rem;
+}
+
+.indicators {
+	display: flex;
+	justify-content: center;
+	margin-top: 1rem;
+}
+
+.indicator {
+	width: 10px;
+	height: 10px;
+	margin: 0 5px;
+	background-color: gray;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+	opacity: 0.6;
+}
+
+.activeIndicator {
+	background-color: #0070f3;
+	opacity: 1;
+}
